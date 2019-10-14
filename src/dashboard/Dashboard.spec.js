@@ -8,14 +8,14 @@ test('Dashboard renders correctly', () => {
   expect(render (<Dashboard />)).toMatchSnapshot();
 });
 
-// CHECKS CONTROLS ARE BEING SHOWN
-test('Controls are being shown on dashboard', () => {
+// CHECKS DISPLAY ARE BEING SHOWN
+test('Display is being shown on dashboard', () => {
   const { getByText } = render(<Dashboard />);
   getByText(/unlocked/i);
-  getByText(/locked/i);
+  getByText(/open/i);
 })
 
-// CHECKS DISPLAY IS BEING SHOWN
+// CHECKS CONTROLS IS BEING SHOWN
 test('Controls are being shown on dashboard', () => {
   const { getByText } = render(<Dashboard />);
   getByText(/lock gate/i);
