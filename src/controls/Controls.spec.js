@@ -83,7 +83,7 @@ test('Closed button disabled', () => {
     <Controls closed={true} locked={true} />
   );
   // const closedGate = queryByText(/open gate/i);
-  queryByText(/open gate/i).getAttribute('disabled')
+  expect(queryByText(/open gate/i).getAttribute('disabled')).not.toBeNull()
 })
 
 // TEST #22: LOCKED TOGGLE BUTTON IS DISABLE IF THE GATE IS OPEN

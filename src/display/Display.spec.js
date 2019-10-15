@@ -33,7 +33,7 @@ test('Display open when closed is false', () => {
 // TEST #8: DISPLAYS LOCKED WHEN LOCKED = TRUE
 test('Display locked when locked', () => {
   const { getByText } = render(<Display locked={true} />)
-
+  // use querybytext to check that unlocked is null since the word locked is in unlocked
   getByText(/locked/i)
 });
 
@@ -48,7 +48,8 @@ test('Display unlocked when locked is false', () => {
 test('LockedClass has red-led when locked', () => {
   const { getByText } = render(<Display locked={true} />);
   const lock = getByText(/locked/i)
-  expect(lock).toHaveClass('red-led')
+  expect(lock.className.includes('red-led')).toBe(true)
+  // expect(lock).toHaveClass('red-led')
 });
 
 // TEST #11: LOCKEDCLASS CONTAINS GREEN-LED CLASS WHEN UNLOCKED
