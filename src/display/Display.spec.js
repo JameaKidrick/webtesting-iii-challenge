@@ -44,9 +44,6 @@ test('Display unlocked when locked is false', () => {
   getByText(/unlocked/i)
 });
 
-
-/*************************** HOW TO FIND/TEST CLASS??? ******************************/
-
 // TEST #10: LOCKEDCLASS CONTAINS RED-LED CLASS WHEN LOCKED
 test('LockedClass has red-led when locked', () => {
   const { getByText } = render(<Display locked={true} />);
